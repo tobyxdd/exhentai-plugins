@@ -19,14 +19,14 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 		sendResponse((setHentaiCookies() ? 'ok' : 'Unable to set cookies'));
 	} else if(request == 'deleteAllCookies') {
 		chrome.cookies.remove({name:"yay", url:"https://exhentai.org/"}, function(){});
-		chrome.cookies.remove({name:"ipb_anonlogin", url:"http://exhentai.org/"}, function(){});
-		chrome.cookies.remove({name:"ipb_member_id", url:"http://exhentai.org/"}, function(){});
-		chrome.cookies.remove({name:"ipb_pass_hash", url:"http://exhentai.org/"}, function(){});
-		chrome.cookies.remove({name:"ipb_session_id", url:"http://exhentai.org/"}, function(){});
-		chrome.cookies.remove({name:"ipb_anonlogin", url:"http://e-hentai.org/"}, function(){});
-		chrome.cookies.remove({name:"ipb_member_id", url:"http://e-hentai.org/"}, function(){});
-		chrome.cookies.remove({name:"ipb_pass_hash", url:"http://e-hentai.org/"}, function(){});
-		chrome.cookies.remove({name:"ipb_session_id", url:"http://e-hentai.org/"}, function(){});		
+		chrome.cookies.remove({name:"ipb_anonlogin", url:"https://exhentai.org/"}, function(){});
+		chrome.cookies.remove({name:"ipb_member_id", url:"https://exhentai.org/"}, function(){});
+		chrome.cookies.remove({name:"ipb_pass_hash", url:"https://exhentai.org/"}, function(){});
+		chrome.cookies.remove({name:"ipb_session_id", url:"https://exhentai.org/"}, function(){});
+		chrome.cookies.remove({name:"ipb_anonlogin", url:"https://e-hentai.org/"}, function(){});
+		chrome.cookies.remove({name:"ipb_member_id", url:"https://e-hentai.org/"}, function(){});
+		chrome.cookies.remove({name:"ipb_pass_hash", url:"https://e-hentai.org/"}, function(){});
+		chrome.cookies.remove({name:"ipb_session_id", url:"https://e-hentai.org/"}, function(){});		
 		sendResponse();
 	} else if(request == 'reload') {
 		chrome.tabs.getSelected(null, function(tab) {
