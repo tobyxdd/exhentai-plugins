@@ -10,8 +10,8 @@ $(document).ready(function() {
 		' <a id="haruhichanLogout" href="#">Logout</a>');
 		
 	$('#haruhichanLogout').click(function() {
-		chrome.runtime.sendMessage('deleteAllCookies', function(){ 
-			chrome.runtime.sendMessage('reload', function(){});
+		browser.runtime.sendMessage('deleteAllCookies', function(){ 
+			browser.runtime.sendMessage('reload', function(){});
 		});
 	});
 });

@@ -49,7 +49,7 @@ function resetLoginForm() {
 }
 
 function reloadPage() {
-	chrome.runtime.sendMessage('reload', function(){});
+	browser.runtime.sendMessage('reload', function(){});
 }
 
 function onReturnMessage(status) {
@@ -81,7 +81,7 @@ function handleLoginClick() {
 				displayError('No account exists with name "' + username + '"');
 				resetLoginForm();
 			} else if(x.indexOf('You are now logged in as:') != -1) {
-				chrome.runtime.sendMessage('cookieDataSet', onReturnMessage);
+				browser.runtime.sendMessage('cookieDataSet', onReturnMessage);
 			} else {
 				displayError('Error parsing login result page!');
 				resetLoginForm();
