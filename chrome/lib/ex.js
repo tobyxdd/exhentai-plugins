@@ -110,7 +110,7 @@ function makeLoginForm() {
 				'</label>' + 
 				'<button id="loginbutton" class="btn btn-lg btn-success btn-block">Sign in</button>' + 
 				'<div align="center" style="margin-top: 12px; font-size: 12px;">' + 
-					'<a href="http://haruhichan.com/" target="_blank">Presented by Haruhichan</a><br />' +
+					'<a href="http://haruhichan.com/" target="_blank">Presented by Haruhichan and Toby</a><br />' +
 					'<a href="bitcoin:1M79tGdeQrhuwqP1wa9oWpgWoWo86EyoaC">Bitcoin</a>: 1M79tGdeQrhuwqP1wa9oWpgWoWo86EyoaC<br />' + 
 					'<a href="litecoin:LRoSWbEPBUzFqawbXHXwLRLPN6L17ypEck">Litecoin</a>: LRoSWbEPBUzFqawbXHXwLRLPN6L17ypEck' + 
 				'</div>' + 
@@ -120,6 +120,11 @@ function makeLoginForm() {
 	loadData();
 	
 	$('#loginbutton').click(handleLoginClick);
+	$(document).keypress(function(e) {
+		if(e.which == 13) {
+			$('#loginbutton').click();
+		}
+	});
 }
 
 $(document).ready(function() {
