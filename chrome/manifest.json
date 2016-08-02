@@ -1,6 +1,7 @@
 {
 	"name": "Sad Panda",
 	"short_name": "Sad Panda",
+	"author": "toby",
 	"version": "2.3",
 	"manifest_version": 2,
 	"description": "Sad Panda",
@@ -8,18 +9,19 @@
 	"content_scripts": [
 		{
 			"run_at": "document_start",
-			"matches": ["http://exhentai.org/", "http://exhentai.org/#"],
+			"matches": ["https://exhentai.org/", "https://exhentai.org/#"],
 			"css": ["css/bootstrap.min.css", "css/bootstrap-theme.min.css", "css/login.css"],
 			"js": ["lib/jquery.min.js", "lib/bootstrap.min.js", "lib/ex.js"]
 		},
 		{
 			"run_at": "document_start",
-			"matches": ["http://exhentai.org/*"],
+			"matches": ["https://exhentai.org/*"],
 			"js": ["lib/jquery.min.js", "lib/logout.js"]
 		}
 	],
 	"background": {
-		"scripts":["lib/background.js"]
+		"scripts":["lib/background.js"],
+		"persistent": false
 	},
 	"web_accessible_resources": [
 		"lib/jquery-1.10.2.min.map"
